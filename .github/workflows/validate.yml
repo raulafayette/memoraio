@@ -25,6 +25,7 @@ jobs:
           .service-venv/bin/python -m pip install --no-cache-dir -r requirements-v2.lock.txt -r requirements-licensing.lock.txt -r requirements-dev.lock.txt
       - name: Tests and source quality
         run: |
+          export PATH="$GITHUB_WORKSPACE/.service-venv/bin:$PATH"
           .service-venv/bin/python -m compileall -q memoria licensing
           node --check memoria/static/app.js
           .service-venv/bin/ruff check memoria licensing macos scripts tests

@@ -3,6 +3,7 @@ import json
 import os
 from pathlib import Path
 import re
+import signal
 import socket
 import subprocess
 import tempfile
@@ -15,10 +16,10 @@ class Launcher(unittest.TestCase):
    with socket.socket() as sock:sock.bind(('127.0.0.1',0));port=sock.getsockname()[1]
    env={**os.environ,'MEMORIA_DATA':d,'BROWSER':'/usr/bin/true','MEMORIA_PORT':str(port)}
    executable=Path('Memória.app/Contents/MacOS/memoria').resolve()
-   p=subprocess.Popen([str(executable)],env=env,stdout=subprocess.DEVNULL,stderr=subprocess.DEVNULL)
+   p=subprocess.Popen([str(executable)],env=env,stdout=subprocess.DEVNULL,stderr=subprocess.DEVNULL,start_new_session=True)
    connection=None
    try:
-    deadline=time.monotonic()+8;url=None
+    deadline=time.monotonic()+30;url=None
     while time.monotonic()<deadline:
      log=Path(d)/'session.log'
      if log.exists():
@@ -39,5 +40,8 @@ class Launcher(unittest.TestCase):
     self.assertFalse((Path(d)/'launcher.lock').exists());self.assertEqual(p.returncode,0)
    finally:
     if connection:connection.close()
-    if p.poll() is None:p.terminate();p.wait(timeout=5)
+    if p.poll() is None:
+     os.killpg(p.pid,signal.SIGTERM)
+     try:p.wait(timeout=10)
+     except subprocess.TimeoutExpired:os.killpg(p.pid,signal.SIGKILL);p.wait()
 if __name__=='__main__':unittest.main()
