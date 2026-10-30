@@ -1,20 +1,23 @@
-name: Bug report
-description: Report a reproducible problem using sanitized or synthetic data.
+name: Problema / Bug report
+description: Relate um problema reproduzível com dados fictícios / Report a reproducible bug.
 body:
+  - type: markdown
+    attributes:
+      value: "Não anexe acervo, canais pessoais, transcrições reais, cookies, tokens ou caminhos pessoais. Use exemplos fictícios. / Use synthetic data only."
   - type: textarea
     id: behavior
     attributes:
-      label: Expected and actual behavior
+      label: Comportamento esperado e observado / Expected and actual behavior
     validations:
       required: true
   - type: textarea
     id: reproduction
     attributes:
-      label: Reproduction and environment
-      description: Include OS, version, operation and a synthetic example. Never include tokens, private URLs, database files or transcripts.
+      label: Passos e ambiente / Steps and environment
+      description: "Sistema, versão e exemplo fictício. / OS, version and synthetic example."
     validations:
       required: true
   - type: textarea
     id: validation
     attributes:
-      label: Sanitized diagnostics
+      label: Diagnóstico revisado / Sanitized diagnostics

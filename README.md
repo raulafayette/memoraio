@@ -24,6 +24,14 @@ O Memoraio nasce para dar continuidade a esse trabalho. Ele mantém um catálogo
 
 A ideia é tornar a preservação e a consulta de conteúdo audiovisual uma rotina compreensível — para estudo, pesquisa, produção e organização de referências, respeitando as permissões de acesso e os direitos sobre o conteúdo.
 
+## Veja o aplicativo em ação
+
+[![Interface com canais inteiramente fictícios](https://github.com/raulafayette/memoraio/releases/download/v0.3.0-community-preview/memoraio-demo-sintetica.png)](https://github.com/raulafayette/memoraio/releases/download/v0.3.0-community-preview/memoraio-demo-sintetica.mp4)
+
+[Assistir à demonstração curta em MP4](https://github.com/raulafayette/memoraio/releases/download/v0.3.0-community-preview/memoraio-demo-sintetica.mp4) · [Como foi produzida](docs/demo.md)
+
+A interface é real; os canais e textos são fictícios e o progresso é simulado e identificado. Nenhum acervo pessoal foi utilizado. Veja as [tarefas abertas para colaborar](https://github.com/raulafayette/memoraio/issues).
+
 ## O que você consegue fazer
 
 | Necessidade | Como o Memoraio ajuda |
@@ -97,6 +105,8 @@ Python, FFmpeg, Node e outras dependências precisam estar disponíveis conforme
 ## Vamos construir juntos
 
 O código está aberto porque organizar memória audiovisual pode ser útil a muitas pessoas, com fontes e necessidades diferentes. Queremos evoluir a experiência com contribuições que tornem o programa mais claro, confiável e fácil de instalar.
+
+Comece pelo [guia de contribuição em português e inglês](CONTRIBUTING.md), pelas [cinco tarefas iniciais](docs/community/START-HERE.md) ou pelo [roadmap colaborativo](docs/ROADMAP.md). Também há um [kit de divulgação](docs/community/OUTREACH.md) pronto para adaptar às regras de cada comunidade.
 
 As frentes prioritárias são:
 

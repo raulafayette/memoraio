@@ -1,14 +1,14 @@
-name: Feature proposal
-description: Describe a concrete use case and its constraints.
+name: Melhoria / Feature proposal
+description: Proponha uma melhoria com um caso de uso claro / Suggest a scoped improvement.
 body:
   - type: textarea
     id: problem
     attributes:
-      label: Problem and resulting behavior
+      label: Problema e resultado desejado / Problem and expected result
     validations:
       required: true
   - type: textarea
     id: constraints
     attributes:
-      label: Data preservation, permissions and alternatives
-      description: Explain the authorized use and how it can be tested with synthetic data.
+      label: Limites e forma de testar / Constraints and verification
+      description: "Explique como testar com dados fictícios, preservando o acervo. / Use synthetic data and preserve existing files."
