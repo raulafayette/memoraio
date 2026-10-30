@@ -17,6 +17,9 @@ def main():
     for tool in ('ffmpeg', 'node', 'xcrun'):
         if not shutil.which(tool):
             raise SystemExit('Instale a dependência antes de continuar: ' + tool)
+    node_version = subprocess.check_output(['node', '-p', 'process.versions.node'], text=True).strip()
+    if int(node_version.split('.')[0]) < 22:
+        raise SystemExit('Atualize Node.js para versão 22 ou superior antes de continuar.')
     home.mkdir(parents=True, exist_ok=True, mode=0o700)
     shutil.copytree(source, engine, ignore=shutil.ignore_patterns('.git', 'data', '.venv', '.service-venv', '__pycache__', '*.pyc', '*.app', '*.log', '.env', '.env.*'))
     subprocess.run([sys.executable, '-m', 'venv', str(home / 'runtime')], check=True)

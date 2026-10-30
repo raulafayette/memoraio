@@ -22,7 +22,7 @@ def service_commands(port):
 
 
 def environment(store):
-    return {**os.environ,'PATH':os.pathsep.join([str(Path(sys.executable).parent),'/opt/homebrew/bin',os.environ.get('PATH','/usr/bin:/bin')]),'MEMORIA_DATA':str(store.root),'HF_HOME':str(store.root/'models'),'HF_HUB_DISABLE_TELEMETRY':'1','PYANNOTE_METRICS_ENABLED':'0','DO_NOT_TRACK':'1','MEMORIA_SERVICE':'1','MEMORIA_UI_STATE':str(Path.home()/'Library'/'Application Support'/'MemoriaAudiovisual'/'ui-session.json'),'OMP_NUM_THREADS':'2','VECLIB_MAXIMUM_THREADS':'2','TOKENIZERS_PARALLELISM':'false','NUMBA_CACHE_DIR':str(store.root/'cache')}
+    return {**os.environ,'PATH':os.pathsep.join([str(Path(sys.executable).parent),'/opt/homebrew/bin',os.environ.get('PATH','/usr/bin:/bin')]),'MEMORIA_DATA':str(store.root),'HF_HOME':str(store.root/'models'),'HF_HUB_DISABLE_TELEMETRY':'1','PYANNOTE_METRICS_ENABLED':'0','DO_NOT_TRACK':'1','MEMORIA_SERVICE':'1','MEMORIA_UI_STATE':os.environ.get('MEMORIA_UI_STATE',str(Path.home()/'Library'/'Application Support'/'MemoriaAudiovisual'/'ui-session.json')),'OMP_NUM_THREADS':'2','VECLIB_MAXIMUM_THREADS':'2','TOKENIZERS_PARALLELISM':'false','NUMBA_CACHE_DIR':str(store.root/'cache')}
 
 def service(store,port=8765):
     lock=open(store.root/'service.lock','a')

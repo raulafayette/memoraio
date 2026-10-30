@@ -6,6 +6,7 @@ for tool in python3 ffmpeg node; do
   command -v "$tool" >/dev/null || { echo "Dependência ausente: $tool. Consulte docs/windows.md."; exit 1; }
 done
 python3 -c 'import sys; assert sys.version_info >= (3,12), "Python 3.12 ou superior necessário"'
+node -e 'if (Number(process.versions.node.split(".")[0]) < 22) { console.error("Node.js 22 ou superior necessário. Consulte docs/windows.md."); process.exit(1); }'
 if [[ -e "$install_root/engine" ]]; then
   echo 'Instalação existente preservada. Consulte o procedimento de atualização.'
   exit 1
