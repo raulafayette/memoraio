@@ -1,0 +1,14 @@
+name: Feature proposal
+description: Describe a concrete use case and its constraints.
+body:
+  - type: textarea
+    id: problem
+    attributes:
+      label: Problem and resulting behavior
+    validations:
+      required: true
+  - type: textarea
+    id: constraints
+    attributes:
+      label: Data preservation, permissions and alternatives
+      description: Explain the authorized use and how it can be tested with synthetic data.

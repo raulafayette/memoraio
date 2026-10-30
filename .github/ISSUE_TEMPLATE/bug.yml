@@ -1,0 +1,20 @@
+name: Bug report
+description: Report a reproducible problem using sanitized or synthetic data.
+body:
+  - type: textarea
+    id: behavior
+    attributes:
+      label: Expected and actual behavior
+    validations:
+      required: true
+  - type: textarea
+    id: reproduction
+    attributes:
+      label: Reproduction and environment
+      description: Include OS, version, operation and a synthetic example. Never include tokens, private URLs, database files or transcripts.
+    validations:
+      required: true
+  - type: textarea
+    id: validation
+    attributes:
+      label: Sanitized diagnostics

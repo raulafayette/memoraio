@@ -1,0 +1,7 @@
+# Downloads e legendas; nenhum modelo de IA é baixado por padrão.
+yt-dlp==2026.10.26
+yt-dlp-ejs==0.8.0
+youtube-transcript-api==1.2.4
+instaloader==4.16
+requests==2.34.2
+defusedxml==0.7.1

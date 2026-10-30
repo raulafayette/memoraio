@@ -1,0 +1,18 @@
+data/
+originals/
+transcripts/
+models/
+.venv/
+.service-venv/
+__pycache__/
+*.pyc
+.DS_Store
+.env
+.env.*
+!.env.example
+*.cookies.txt
+*.log
+Memoraio.app/
+Memória Desktop.app/
+*.zip
+licensing-data/

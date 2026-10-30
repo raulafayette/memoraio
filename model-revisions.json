@@ -1,0 +1,31 @@
+{
+  "mlx-community/whisper-small-mlx": {
+    "revision": "45f3915923c7a79a5a5b5a7d909d39aeb0e5630e",
+    "config_file": "asr-model.json",
+    "allow_patterns": null
+  },
+  "intfloat/multilingual-e5-small": {
+    "revision": "614241f622f53c4eeff9890bdc4f31cfecc418b3",
+    "config_file": "semantic-model.json",
+    "allow_patterns": [
+      "*.json",
+      "*.safetensors",
+      "*.txt",
+      "*.model",
+      "1_Pooling/*"
+    ]
+  },
+  "mlx-community/Qwen3-4B-Instruct-2507-4bit": {
+    "revision": "50d427756c6b1b2fe0c0a10f67fbda1fc8e82c1b",
+    "config_file": "oracle-model.json",
+    "allow_patterns": [
+      "*.json",
+      "*.safetensors",
+      "*.txt",
+      "*.model",
+      "*.jinja",
+      "LICENSE*",
+      "README.md"
+    ]
+  }
+}

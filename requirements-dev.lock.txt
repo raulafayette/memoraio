@@ -1,0 +1,4 @@
+ruff==0.17.3
+
+# Array fixtures for semantic retrieval tests; no model download.
+numpy==2.5.4
